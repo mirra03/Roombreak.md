@@ -2,90 +2,79 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Room Break</title>
-    <link rel="stylesheet" href="style.css"/>
-    <script>
-        function switchLang(lang) {
-            document.querySelectorAll('[data-lang]').forEach(el => {
-                el.style.display = el.dataset.lang === lang ? 'block' : 'none';
-            });
-        }
-    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room Break - Квест комнаты</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body onload="switchLang('ru')">
+<body>
     <header>
+        <div class="lang-switch">
+            <button onclick="switchLanguage('ru')">RU</button>
+            <button onclick="switchLanguage('ro')">RO</button>
+        </div>
         <h1>Room Break</h1>
-        <p data-lang="ru">Первая квест-комната в Молдове с 2014 года</p>
-        <p data-lang="ro">Prima cameră de evadare din Moldova din 2014</p>
         <nav>
+            <a href="#home">Главная</a>
             <a href="#quests">Квесты</a>
             <a href="#prices">Цены</a>
-            <a href="#contacts">Контакты</a>
+            <a href="#contact">Контакты</a>
         </nav>
-        <div class="lang-switch">
-            <button onclick="switchLang('ru')">RU</button>
-            <button onclick="switchLang('ro')">RO</button>
-        </div>
     </header>
 
+    <section id="home" class="banner">
+        <img src="logo.png" alt="Room Break Logo" class="logo">
+        <p>Погрузитесь в захватывающий мир квестов Room Break</p>
+    </section>
+
     <section id="quests">
-        <h2 data-lang="ru">Наши квесты</h2>
-        <h2 data-lang="ro">Camerele noastre</h2>
-
-        <div class="quest">
-            <h3>Алькатрас / Alcatraz</h3>
-            <p data-lang="ru">Окажитесь в легендарной тюрьме Алькатрас — точной копии знаменитого островного изолятора из Сан-Франциско...</p>
-            <p data-lang="ro">Trăiți experiența legendarului penitenciar Alcatraz — o copie fidelă a închisorii de pe insula din San Francisco...</p>
-        </div>
-
-        <div class="quest">
-            <h3>Призрак / Fantoma</h3>
-            <p data-lang="ru">Загадочный старинный замок скрывает в себе тайну исчезнувшего графства...</p>
-            <p data-lang="ro">Un castel vechi și misterios ascunde secretul dispariției unui județ întreg...</p>
-        </div>
-
-        <div class="quest">
-            <h3>Шерлок / Sherlock</h3>
-            <p data-lang="ru">Погрузитесь в атмосферу Лондона и станьте помощником самого Шерлока Холмса...</p>
-            <p data-lang="ro">Intrați în atmosfera Londrei și deveniți asistentul celebrului detectiv Sherlock Holmes...</p>
-        </div>
-
-        <div class="quest">
-            <h3>Шериф / Sheriff</h3>
-            <p data-lang="ru">Жестокий шериф обвинил вас в ограблении банка...</p>
-            <p data-lang="ro">Un șerif nemilos v-a acuzat de jefuirea unei bănci...</p>
+        <h2>Наши квесты</h2>
+        <div class="quest-grid">
+            <div class="quest">
+                <img src="images/alcatraz.jpg" alt="Алькатрас" class="quest-image">
+                <h3>Алькатрас</h3>
+                <p>Окажитесь в легендарной тюрьме Алькатрас — точной копии знаменитого островного изолятора из Сан-Франциско. При входе вы будете разделены на две камеры, запертые прочными дверями. Чтобы выбраться, придётся объединить усилия, разгадывать головоломки и искать путь к свободе.</p>
+            </div>
+            <div class="quest">
+                <img src="images/sheriff.jpg" alt="Офис Шерифа" class="quest-image">
+                <h3>Офис Шерифа</h3>
+                <p>Жестокий шериф обвинил вас в ограблении банка. Некоторых из вашей команды он уже бросил за решётку. Ваша миссия — освободить друзей, преодолеть ловушки и выбраться из офиса, пока не стало слишком поздно.</p>
+            </div>
+            <div class="quest">
+                <img src="images/sherlock.jpg" alt="Шерлок Холмс" class="quest-image">
+                <h3>Шерлок Холмс</h3>
+                <p>Погрузитесь в атмосферу Лондона и станьте помощником самого Шерлока Холмса. Его близкая подруга таинственно исчезла, и теперь всё зависит от вас. Исследуйте улики, анализируйте детали и шаг за шагом приближайтесь к разгадке.</p>
+            </div>
+            <div class="quest">
+                <img src="images/ghost.jpg" alt="Призрак" class="quest-image">
+                <h3>Призрак</h3>
+                <p>Загадочный старинный замок скрывает в себе тайну исчезнувшего графства. Вам предстоит раскрыть эту мрачную историю, погружаясь в атмосферу прошлого. Ищите улики, решайте головоломки, изучайте каждый уголок.</p>
+            </div>
         </div>
     </section>
 
     <section id="prices">
-        <h2 data-lang="ru">Цены</h2>
-        <h2 data-lang="ro">Prețuri</h2>
-        <div data-lang="ru">
-            <p><strong>Будние дни:</strong> 600 лей (2–4 человека)</p>
-            <p><strong>Выходные:</strong> 700 лей (2–4 человека)</p>
-            <p>Доплата за 5 и 6-го игрока: +100 лей</p>
-            <p>Максимум в одной комнате: 6 человек</p>
-        </div>
-        <div data-lang="ro">
-            <p><strong>Zile lucrătoare:</strong> 600 lei (2–4 persoane)</p>
-            <p><strong>Weekend:</strong> 700 lei (2–4 persoane)</p>
-            <p>+100 lei pentru al 5-lea și al 6-lea participant</p>
-            <p>Maximum per cameră: 6 persoane</p>
+        <h2>Цены</h2>
+        <div class="price-info">
+            <p>Будни: 600 лей (2-4 человека)</p>
+            <p>Выходные: 700 лей (2-4 человека)</p>
+            <p>Доплата за 5-6 человек: 100 лей за человека</p>
         </div>
     </section>
 
-    <section id="contacts">
-        <h2 data-lang="ru">Контакты</h2>
-        <h2 data-lang="ro">Contacte</h2>
-        <p>Телефон: <a href="tel:+37360533390">+373 60 533 390</a></p>
-        <p>Instagram: <a href="https://www.instagram.com/roombreakmd" target="_blank">@roombreakmd</a></p>
-        <p>Facebook: <a href="https://www.facebook.com/RoomBreakMD" target="_blank">Room Break MD</a></p>
+    <section id="contact">
+        <h2>Контакты</h2>
+        <div class="social-links">
+            <a href="https://www.facebook.com/RoomBreakMD/?locale=ru_RU" target="_blank">Facebook</a>
+            <a href="https://www.instagram.com/roombreakmd" target="_blank">Instagram</a>
+            <p>Телефон: +37360533390</p>
+        </div>
     </section>
 
     <footer>
-        <p>&copy; 2024 Room Break — Все права защищены</p>
+        <p>© 2024 Room Break</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
